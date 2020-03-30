@@ -1,0 +1,13 @@
+.rodape {
+    /* tamanho */
+    width: 100%;
+    /* espacamento */
+    padding: 5px 10px;
+    /* background */
+    background-color: rgb(245, 245, 245);
+    /* flex */
+    display: flex;
+    justify-content: space-between;
+    /* borda */
+    border-top: 1px solid rgb(211, 211, 211);
+}

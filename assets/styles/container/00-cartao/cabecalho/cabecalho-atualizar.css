@@ -1,0 +1,16 @@
+.cabecalho__atualizar {
+    /* espacamento */
+    margin: 10px;
+    /* absolute */
+    position: absolute;
+    right: 0;
+    /* font */
+    color: rgb(245, 245, 245);
+    /* cursor */
+    cursor: pointer;
+    /* transition */
+    transition: transform 200ms ease-in-out;
+ }
+ .cabecalho__atualizar:hover {
+    transform: rotate(180deg);
+ }

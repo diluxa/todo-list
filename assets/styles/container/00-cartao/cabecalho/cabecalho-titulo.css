@@ -1,0 +1,12 @@
+.cabecalho__titulo {
+    /* espacamento */
+    padding: 2px 5px;
+    /* absolute */
+    position: absolute;
+    bottom: 0;
+    /* background */
+    background-color: rgba(175, 175, 175,0.3);
+    /* font */
+    color: rgb(245, 245, 245);
+    font-size: 1.1rem;
+}

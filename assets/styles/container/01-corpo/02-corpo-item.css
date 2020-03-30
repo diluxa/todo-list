@@ -1,0 +1,8 @@
+.corpo__item {
+    /* espacamento */
+    padding: 5px 10px 5px 10px;
+    /* relative */
+    position: relative;
+    /* flex */
+    display: flex;
+}

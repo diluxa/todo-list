@@ -1,0 +1,11 @@
+.rodape__campo-texto {
+    /* tamanho */
+    width: 250px;
+    /* borda */
+    border: none;
+    /* background */
+    background-color: transparent;
+}
+.rodape__campo-texto:focus {
+    outline: transparent;
+}

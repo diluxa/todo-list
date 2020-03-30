@@ -1,0 +1,17 @@
+html, body {
+    /* tamanho */
+    height: 100%;
+    /* background */
+    background-color: #4b5267;
+}
+li {
+    list-style: none;
+}
+* {
+    /* espacamento */
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font */
+    font-family: 'Roboto', sans-serif;
+}

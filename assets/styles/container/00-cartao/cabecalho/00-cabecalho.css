@@ -1,0 +1,14 @@
+ .cabecalho {
+     /* tamanho */
+     height: 100px;
+     /* relative */
+     position: relative;
+     /* background */
+     background-image: url(../../../../images/cabecalho-background.jpg);
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     /* borda */
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+ }

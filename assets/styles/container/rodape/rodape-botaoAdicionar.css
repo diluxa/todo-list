@@ -1,0 +1,11 @@
+.rodape__botao-adicionar {
+    /* font */
+    color: rgb(27, 27, 27);
+    /* cursor */
+    cursor: pointer;
+    /* transition */
+    transition: color 200ms ease-in-out;
+}
+.rodape__botao-adicionar:hover {
+    color: #4daa57;
+}

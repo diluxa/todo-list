@@ -1,0 +1,8 @@
+.corpo__icone-circulo {
+    /* espacamento */
+    margin-right: 5px;
+    /* font */
+    color: rgb(27, 27, 27);
+    /* cursor */
+    cursor: pointer;
+}
