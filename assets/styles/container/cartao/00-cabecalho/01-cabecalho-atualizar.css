@@ -9,8 +9,8 @@
     /* cursor */
     cursor: pointer;
     /* transition */
-    transition: transform 200ms ease-in-out;
+    transition: transform 100ms ease-in-out;
  }
- .cabecalho__atualizar:hover {
-    transform: rotate(180deg);
+ .cabecalho__atualizar:active {
+    transform: rotate(360deg);
  }
