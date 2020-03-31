@@ -5,4 +5,5 @@
     position: relative;
     /* flex */
     display: flex;
+    align-items: center;
 }

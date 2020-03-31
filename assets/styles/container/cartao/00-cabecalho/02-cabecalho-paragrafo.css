@@ -1,0 +1,9 @@
+.cabecalho__paragrafo {
+    /* absolute */
+    position: absolute;
+    bottom: 25px;
+    margin: 0 5px;
+    /* font */
+    font-size: 0.7rem;
+    color: rgb(245, 245, 245);
+}

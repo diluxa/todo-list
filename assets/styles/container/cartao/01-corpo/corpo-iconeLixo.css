@@ -5,9 +5,4 @@
     color: rgb(27, 27, 27);
     /* cursor */
     cursor: pointer;
-    /* transition */
-    transition: color 200ms ease-in-out;
-}
-.corpo__icone-lixo:hover {
-    color: #de3c4b;
 }

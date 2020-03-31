@@ -56,6 +56,15 @@ function deletaTarefaDaLista(event) {
         itemLixo.offsetParent.remove();
     };
 };
+//funcao deleta todas as tarefas
+function deletaTodasAsTarefas(){
+    let quantidadeDeTarefas = listaTarefas.childNodes;
+    let contador = (quantidadeDeTarefas.length)-1;
+    while(quantidadeDeTarefas.length !== 0) {
+        quantidadeDeTarefas[contador].remove();
+        contador = quantidadeDeTarefas.length-1;
+    }
+}
 //funcao formata Data
 function formataData() {
     let novaData = new Date();
@@ -135,3 +144,4 @@ botaoAdicionar.addEventListener('click',adicionaNovaLinaListaNoClique);
 campoTexto.addEventListener('keypress',adicionaNovaLinaListaNoEnter);
 listaTarefas.addEventListener('click',confereIconeCirculoSeMarcado);
 listaTarefas.addEventListener('click',deletaTarefaDaLista);
+botaoAtualizar.addEventListener('click',deletaTodasAsTarefas);
