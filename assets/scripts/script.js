@@ -1,14 +1,13 @@
 //variaveis cabecalho
-let botaoAtualizar;
+let botaoAtualizar,dataAtual;
 
 botaoAtualizar = document.querySelector('.cabecalho__atualizar');
+dataAtual = document.querySelector('.cabecalho__titulo');
 
 //variaveis corpo
-let listaTarefas,botaoIconeCirculo,botaoIconeLixo;
+let listaTarefas;
 
 listaTarefas = document.querySelector('.corpo__lista');
-botaoIconeCirculo = document.querySelector('.corpo__icone-circulo');
-botaoIconeLixo = document.querySelector('.corpo__icone-lixo');
 
 //variaveis rodape
 let campoTexto,botaoAdicionar;
@@ -19,14 +18,14 @@ botaoAdicionar = document.querySelector('.rodape__botao-adicionar');
 //funcao pega valor do campo texto
 function pegaValorDoCampoTexto() {
     return campoTexto.value;
-}
+};
 //funcao cria li
 function criaLi() {
     let elementosLi =  `<li class="corpo__item">
                         <i class="corpo__icone-circulo far fa-circle"></i>
                         <span class="corpo__paragrafo">${pegaValorDoCampoTexto()}</span>
                         <i class="corpo__icone-lixo far fa-trash-alt"></i>
-                        </li>`
+                        </li>`;
     listaTarefas.insertAdjacentHTML('beforeend',elementosLi);
     campoTexto.value = '';
 };
@@ -42,6 +41,97 @@ function adicionaNovaLinaListaNoEnter(event) {
         criaLi();
     };
 };
+//funcao confere icone circulo se marcado
+function confereIconeCirculoSeMarcado(event) {
+    let iconeCirculo = event.target;
+    if(iconeCirculo.attributes[0].textContent.indexOf('circulo') !== -1) {
+        iconeCirculo.classList.toggle('fa-circle');
+        iconeCirculo.classList.toggle('fa-check-circle');
+    };
+};
+//funcao deleta tarefa da lista
+function deletaTarefaDaLista(event) {
+    let itemLixo = event.target;
+    if(itemLixo.attributes[0].textContent.indexOf('lixo') !== -1) {
+        itemLixo.offsetParent.remove();
+    };
+};
+//funcao formata Data
+function formataData() {
+    let novaData = new Date();
+    let diaSemana;
+    let diaMes = novaData.getDate()
+    let mes;
+    let dataFormatada;
+    switch(novaData.getMonth()) {
+        case 0:
+            mes = "Janeiro";
+            break;
+        case 1:
+            mes = "Fevereiro";
+            break;
+        case 2:
+            mes = "Março";
+            break;
+        case 3:
+            mes = "Abril";
+            break;
+        case 4:
+            mes = "Maio";
+            break;
+        case 5:
+            mes = "Junho";
+            break;
+        case 6:
+            mes = "Julho";
+            break;
+        case 7:
+            mes = "Agosto";
+            break;
+        case 8:
+            mes = "Setembro";
+            break;
+        case 9:
+            mes = "Outubro";
+            break;
+        case 10:
+            mes = "Novembro";
+            break;
+        case 11:
+            mes = "Dezembro";
+    };
+    switch(novaData.getDay()) {
+        case 0:
+            diaSemana = "Domingo";
+            break;
+        case 1:
+            diaSemana = "Segunda";
+            break;
+        case 2:
+            diaSemana = "Terça";
+            break;
+        case 3:
+            diaSemana = "Quarta";
+            break;
+        case 4:
+            diaSemana = "Quinta";
+            break;
+        case 5:
+            diaSemana = "Sexta";
+            break;
+        case 6:
+            diaSemana = "Sábado";
+            break;
+    };
+    dataFormatada = diaSemana+', '+diaMes+' de '+mes;
+    return dataFormatada;
+};
 
+//invocações
+dataAtual.innerHTML = formataData();
+
+//eventos
 botaoAdicionar.addEventListener('click',adicionaNovaLinaListaNoClique);
 campoTexto.addEventListener('keypress',adicionaNovaLinaListaNoEnter);
+listaTarefas.addEventListener('click',confereIconeCirculoSeMarcado);
+listaTarefas.addEventListener('click',deletaTarefaDaLista);
