@@ -1,3 +1,9 @@
 .corpo__paragrafo {
+    /* tamanho */
+    width: 200px;
+    /* espacamento */
+    margin-right: 5px;
+    /* font */
     color: rgb(27, 27, 27);
+    word-wrap: break-word;
 }

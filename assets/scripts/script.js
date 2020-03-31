@@ -23,7 +23,7 @@ function pegaValorDoCampoTexto() {
 function criaLi() {
     let elementosLi =  `<li class="corpo__item">
                         <i class="corpo__icone-circulo far fa-circle"></i>
-                        <span class="corpo__paragrafo">${pegaValorDoCampoTexto()}</span>
+                        <p class="corpo__paragrafo">${pegaValorDoCampoTexto()}</p>
                         <i class="corpo__icone-lixo far fa-trash-alt"></i>
                         </li>`;
     listaTarefas.insertAdjacentHTML('beforeend',elementosLi);
