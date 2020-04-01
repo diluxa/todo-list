@@ -23,7 +23,7 @@ function pegaValorDoCampoTexto() {
 function criaLi() {
     let elementosLi =  `<li class="corpo__item">
                         <i class="corpo__icone-circulo far fa-circle"></i>
-                        <p class="corpo__paragrafo">${pegaValorDoCampoTexto()}</p>
+                        <p class="corpo__paragrafo" contenteditable="false">${pegaValorDoCampoTexto()}</p>
                         <i class="corpo__icone-lixo far fa-trash-alt"></i>
                         </li>`;
     listaTarefas.insertAdjacentHTML('beforeend',elementosLi);
@@ -65,6 +65,17 @@ function deletaTodasAsTarefas(){
         contador = quantidadeDeTarefas.length-1;
     }
 }
+//funcao edita conteudo li
+function editaConteudoLi(event) {
+    let itemAlvo = event.target;
+    itemAlvo.contentEditable = true;
+    itemAlvo.onkeypress = function(event) {
+        if(event.keyCode === 13) {
+            itemAlvo.contentEditable = false;
+            campoTexto.focus();
+        };
+    };
+};
 //funcao formata Data
 function formataData() {
     let novaData = new Date();
@@ -145,3 +156,4 @@ campoTexto.addEventListener('keypress',adicionaNovaLinaListaNoEnter);
 listaTarefas.addEventListener('click',confereIconeCirculoSeMarcado);
 listaTarefas.addEventListener('click',deletaTarefaDaLista);
 botaoAtualizar.addEventListener('click',deletaTodasAsTarefas);
+listaTarefas.addEventListener('click',editaConteudoLi);
